@@ -1,17 +1,28 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
 ### Date created
-Include the date you created this project and README file.
+Bikeshare project was created April 30, 2023.
+This readme file was edited July 9, 2023.
 
 ### Project Title
-Replace the Project Title
+## Nellys Liang's Data Science Project: Bikeshare Data
 
 ### Description
-Describe what your project is about and what it does
+This project is my final project required to pass the Udacity Data Science course.  
+The project is a program that utilizes 3 data tables to gather customized information about bikeshare usage:  
+• user will be able to customize bikeshare user information from 3 cities: Chicago, New York, City, Washington   
+• user must use Python to run the file, by running `$ python3 NL_bikeshare.py`
 
 ### Files used
-Include the files used
+• NL_bikeshare.py
+the following files are too large to push to the main repo, but are needed to run the program:
+• chicago.csv
+• new_york_city.csv
+• washington.csv  
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+.sort_values()
+https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html
 
+datetime.now().year
+https://stackoverflow.com/questions/28189442/datetime-current-year-and-month-in-python
+
+https://www.udacity.com
