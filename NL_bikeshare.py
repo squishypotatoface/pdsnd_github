@@ -7,6 +7,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -115,7 +116,7 @@ def time_stats(df):
     print('The most common hour of the day to rent a bike is {}'.format(common_hour))
     print()
 
-
+    # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -162,6 +163,7 @@ def station_stats(df):
     print('The most commonly used combination of stations are {}. \nThis combination of stations was used {} times.'.format(common_combo, common_station_count))
     print()
 
+    # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -184,6 +186,7 @@ def trip_duration_stats(df):
     print("The average number of minutes traveled per user is {}.".format(mean_travel))
     print()
 
+    # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -296,7 +299,7 @@ def user_stats(df):
 
 
 
-
+    # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
