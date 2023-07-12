@@ -327,7 +327,7 @@ def main():
             else:
                 break
 
-
+        # Display option to let user run the program again
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
