@@ -1,12 +1,13 @@
 import time
 import pandas as pd
-import numpy as np
 from datetime import datetime
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+def decorative_line():
+    print ('-' * 40)
 
 def get_filters():
     """
@@ -50,7 +51,7 @@ def get_filters():
 
 
 
-    print('-'*40)
+    decorative_line()
     return city, month, day
 
 
@@ -118,7 +119,7 @@ def time_stats(df):
 
     # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    decorative_line()
 
 
 def station_stats(df):
@@ -165,7 +166,7 @@ def station_stats(df):
 
     # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    decorative_line()
 
 
 def trip_duration_stats(df):
@@ -188,7 +189,7 @@ def trip_duration_stats(df):
 
     # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    decorative_line()
 
 
 def user_stats(df):
@@ -301,7 +302,7 @@ def user_stats(df):
 
     # display the amount of time it took to run statistics
     print("\nThis took %s seconds." % (time.time() - start_time))
-    print('-'*40)
+    decorative_line()
 
 
 def main():
