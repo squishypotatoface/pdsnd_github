@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     print()
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington)
     while True:
             city = input('Would you like to see data for Chicago, New York City, or Washington?\n').lower()
             print()
@@ -25,7 +25,7 @@ def get_filters():
                 break
             else:
                 print('\nOops! That\'s not a valid input. Let\'s try again.\n')
-        
+
 
 
     # get user input for month (all, january, february, ... , june)
@@ -42,7 +42,7 @@ def get_filters():
     while True:
             day = input('Which day of the week would you like to filter by? Choose Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday. Or type in "none" for no day filters.\n').lower()
             print()
-            if day.lower() in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'none'):    
+            if day.lower() in ('sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'none'):
                 break
             else:
                 print('\nThat\'s not a valid input. Let\'s try again.\n')
@@ -69,14 +69,14 @@ def load_data(city, month, day):
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.strftime('%A').str.lower()
 
-    if month != 'none':    
+    if month != 'none':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month)+1
         df = df[df['month'] == month]
 
-    if day != 'none':    
+    if day != 'none':
         df = df[df['day_of_week'] == day.lower()]
-   
+
     print()
     print('The CITY you chose to research was {}'.format(city.upper()))
     print('The MONTH you chose to filter by, where January = 1, was {}'.format(month))
@@ -84,7 +84,7 @@ def load_data(city, month, day):
     print()
     print('-'*40)
     print()
-   
+
 
     return df
 
@@ -137,7 +137,7 @@ def station_stats(df):
     for station in start_station:
         if station == common_start_station:
             start_station_count += 1
-    
+
     print('The most popular start station is {}. \nThis station was used {} times.'.format(common_start_station, start_station_count))
     print()
 
@@ -153,13 +153,13 @@ def station_stats(df):
 
     # display most frequent combination of start station and end station trip and the number of occurrences for this combination
     df['Station Combination'] = start_station +" AND "+ end_station
-    common_combo = df['Station Combination'].mode()[0] 
+    common_combo = df['Station Combination'].mode()[0]
     common_station_count = 0
     for station in df['Station Combination']:
         if station == common_combo:
             common_station_count += 1
 
-    print('The most commonly used combination of stations are {}. \nThis combination of stations was used {} times.'.format(common_combo, common_station_count))    
+    print('The most commonly used combination of stations are {}. \nThis combination of stations was used {} times.'.format(common_combo, common_station_count))
     print()
 
     print("\nThis took %s seconds." % (time.time() - start_time))
@@ -195,7 +195,7 @@ def user_stats(df):
     start_time = time.time()
     print()
     print()
-    
+
     # Display counts of user types
     count_subscriber = 0
     count_customer = 0
@@ -215,7 +215,7 @@ def user_stats(df):
     print()
     print('The number of unclassified user types is {}.'.format(count_unclassified))
     print()
-   
+
     # Display counts of gender
     try:
         female_count = 0
@@ -248,7 +248,7 @@ def user_stats(df):
 
         #earliest year
         earliest = int(df['Birth Year'].min())
-        
+
         #calculates the number of earliest birth year occurrences
         early_count = 0
         for year in df['Birth Year']:
@@ -260,25 +260,25 @@ def user_stats(df):
 
         print('The earliest year a user was born is {}. \nToday, these users would be {} year old! \nIt looks like {} bikeshare users were born in {}.'.format(earliest, earliest_age, early_count, earliest))
         print()
-        
+
         #most recent year
         recent = int(df['Birth Year'].max())
-        
+
         #calculates the number of most recent birth year occurrences
         recent_count = 0
         for year in df['Birth Year']:
             if year == recent:
                 recent_count += 1
-      
+
         #calculates the age of the most recent birth year user
         recent_age = current_year - recent
-        
+
         print('The most recent year a user was born is {}. \nToday, these users would be {} years old! \nIt looks like {} bikeshare users were born in {}.'.format(recent, recent_age, recent_count, recent))
         print()
-        
+
         #most common year
         common_year = int(df['Birth Year'].mode()[0])
-        
+
         #calculates the number of most common birth year occurrences
         common_number = 0
         for year in df['Birth Year']:
@@ -295,7 +295,7 @@ def user_stats(df):
         print()
 
 
-    
+
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -313,7 +313,7 @@ def main():
         # Display 5 rows of raw data
         df_raw = pd.read_csv(CITY_DATA[city])
         start_row_num = 0
-        end_row_num = 5       
+        end_row_num = 5
         while True:
             see_raw = input('\nDo you want to see 5 lines of raw bike share user data? You\'ll get to see all the stats in a fun chart! Enter yes or no.\n')
             print()
